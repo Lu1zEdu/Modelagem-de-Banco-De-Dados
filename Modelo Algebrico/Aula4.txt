@@ -1,0 +1,15 @@
+--  *** Aula 4: Operações de conjuntos ***
+
+-- União: Livros mais vendidos ou entre os mais recomendados
+ π id_livro (LivroMaisVendidos) ∪ π id_livro (LivrosRecomendados)
+
+-- Intersecção: Livros mais vendidos ou entre os mais recomendados
+ π id_livro (LivroMaisVendidos) ∩ π id_livro (LivrosRecomendados)
+
+-- Diferença: Quais livros que estão no cadastro do Clube do Livro, mas não foram vendidos?
+ π id_livro (Livros) - π id_livro (Vendas)
+
+-- Quais vendedores ainda não realizaram uma venda
+ π id_vendedor (Vendedores) - π id_vendedor_vendas (Vendas)
+
+

@@ -1,0 +1,17 @@
+--  **Aula 3 - lidando com tabelas diferentes**
+
+-- Lista de possíveis livros que cada cliente pode comprar no clube do livro.
+π nome, nome_livro (Livros ⨯ Clientes)
+
+-- Como visualizar e verificar o nome dos vendedores em cada venda?
+π id_pedido,id_vendedor_vendas, id_vendedor, nome(σ id_vendedor = id_vendedor_vendas (  (Vendas ⨯ Vendedores)))
+π id_pedido,id_vendedor_vendas, id_vendedor, nome(Vendas ⨝ id_vendedor = id_vendedor_vendas Vendedores)
+
+-- Qual o nome dos livros vendidos?
+π id_pedido,id_livro, nome_livro (Livros ⨝ Vendas) 
+
+-- Será que alguma pessoa vendedora não realizou alguma venda? Se sim? Quais?
+σ id_vendedor_vendas = null (π id_vendedor,id_vendedor_vendas, nome (Vendedores ⟕ Vendedores.id_vendedor = Vendas.id_vendedor_vendas Vendas))
+
+
+

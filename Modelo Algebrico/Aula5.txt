@@ -1,0 +1,16 @@
+-- ** Aula 5: Outras Operações **
+
+
+-- Renomear relações: Encontrar as pessoas vendedores mais experientes que 'Camila Santos'.
+  σ V.anos_exp < Vendedores.anos_exp (σ V.nome = 'Camila Santos' (ρ V Vendedores ⨯ Vendedores)) 
+-- ou unindo as duas condições da seleção com o ∧
+  σ V.nome = 'Camila Santos' ∧ V.anos_exp < Vendedores.anos_exp (ρ V Vendedores ⨯ Vendedores))
+
+
+-- Renomear atributos: Tornar o código do vendedor mais descritivo
+  ρ id_vendedor ← id_vendedor_vendas (Vendas)
+
+
+-- Atribuir operações:  Nome dos livros recomendados e também mais vendidos
+   livros_especiais = π id_livro (LivrosRecomendados) ∩ π id_livro (LivroMaisVendidos)
+   livros_especiais ⨝ Livros

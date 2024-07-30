@@ -1,0 +1,16 @@
+-- ** Aula 2: Linhas e colunas específicas **
+
+-- Frete grátis para o Rio de Janeiro, quem aproveita esse benefício?
+σ cidade = 'Rio de Janeiro' (Clientes)
+
+-- Lista de nomes das pessoas vendedores
+π nome (Vendedores) 
+
+-- Pessoas vendedoras e tempo de experiência
+π nome, anos_exp (Vendedores) 
+
+-- Quantos exemplares possuem no estoque para cada livros do catálogo?
+π qtd_estoque,nome_livro(Livros)
+
+-- Com frete grátis para o Rio de Janeiro, o Marketing divulgará por e-mail ao beneficiários. 
+π nome, email (σ cidade = 'Rio de Janeiro' (Clientes))
